@@ -2,22 +2,23 @@
 let carArray = [];
 
 
-let carObject = function (cTitle, cYear, cBrand, cColor, cCost) {
+let carObject = function (cTitle, cYear, cBrand, cColor, cCost, cURL) {
     this.ID = Math.random().toString(16).slice(5)
     this.Title = cTitle;  // Name of car
     this.Year = cYear;   // Year of release
     this.Brand = cBrand;  // Car brand
     this.Color = cColor;  // Car color
     this.Cost = cCost;  // approx cost in USD
+    this.URL = cURL;
 }
 
 
-carArray.push(new carObject("Lamborghini Urus", "2023", "Lamborghini", "Yellow", "200,000$"));
-carArray.push(new carObject("Audi RS Q8", "2023", "Audi", "Black", "126,995$"));
-carArray.push(new carObject("BMW X5 M", "2020", "BMW", "Blue", "106,095$"));
-carArray.push(new carObject("Cayenne Turbo", "2022", "Posrche", "White", "131,250$"));
-carArray.push(new carObject("Porsche 718 Boxster", "2023", "Porsche", "Green", "66,950$"));
-carArray.push(new carObject("Lamborghini Sián", "2021", "Lamborghini", "Dark Gold", "3,000,000"));
+carArray.push(new carObject("Lamborghini Urus", "2023", "Lamborghini", "Yellow", "200,000$","\images\\Lamborghini_Urus.jpg"));
+carArray.push(new carObject("Audi RS Q8", "2023", "Audi", "Black", "126,995$", "images\\Audi_RS_Q8.jpg"));
+carArray.push(new carObject("BMW X5 M", "2020", "BMW", "Blue", "106,095$", "\images\\BMW_X5_M.jpg"));
+carArray.push(new carObject("Posrche Cayenne Turbo", "2022", "Posrche", "White", "131,250$", "\images\\Cayenne_Turbo.jpg"));
+carArray.push(new carObject("Porsche 718 Boxster", "2023", "Porsche", "Green", "66,950$", "\images\Porsche_718_Boxster.jpg"));
+carArray.push(new carObject("Lamborghini Sián", "2021", "Lamborghini", "Dark Gold", "3,000,000", "\images\Lamborghini_Sian.jpg"));
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("year").value,
             document.getElementById("brand").value, 
             document.getElementById("color").value,
-            document.getElementById("cost").value));
+            document.getElementById("cost").value,
+            document.getElementById("URL").value));
         document.location.href = "index.html#fullcatalog";
     });
     
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("brand").value = "";
         document.getElementById("color").value = "";
         document.getElementById("cost").value = "";
+        document.getElementById("URL").value = "";
     });
 
     
